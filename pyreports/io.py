@@ -24,7 +24,6 @@
 
 # region Imports
 import sqlite3
-import pymssql
 import mysql.connector as mdb
 import psycopg2
 import tablib
@@ -227,8 +226,8 @@ class MSSQLConnection(Connection):
     """Connection microsoft sql class"""
 
     def connect(self):
-        self.connection = pymssql.connect(*self.args, **self.kwargs)
-        self.cursor = self.connection.cursor()
+        raise NotImplementedError()
+        
 
     def close(self):
         self.connection.close()
